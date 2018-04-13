@@ -19,7 +19,11 @@ export class MainComponent implements OnInit, OnDestroy {
   activeDriver:string;
   season;
   constructor(private mainService:MainService) { }
-
+  /**
+   * First angukar life cycle hook,
+   * Calls to main service to get inital data.
+   * Assigns the response to dataCollection Array.
+   */
   ngOnInit() {
     this.mainService.getListData('worldChampions')
     .takeUntil(this.ngUnsubscribe)
@@ -33,8 +37,12 @@ export class MainComponent implements OnInit, OnDestroy {
       this.ngUnsubscribe.next();
       this.ngUnsubscribe.complete();
     }
-
-    handleCardClick(value,){
+    /**
+     * @param  {} value
+     * Method to get an year data and assign to local variable.
+     * Change component state and by that change view to table.
+     */
+    handleCardClick(value){
       this.mainService.getListData('year',value.season)
       .takeUntil(this.ngUnsubscribe)
       .subscribe((res)=>{
