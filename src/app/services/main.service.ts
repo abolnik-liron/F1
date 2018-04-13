@@ -7,7 +7,7 @@ import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
 @Injectable()
 export class MainService {
-  baseApi:string = "http://ergast.com/api";
+  baseApi:string = "https://ergast.com/api";
   /**
    * Constructor
    * @param http HttpClient used to make http requests
