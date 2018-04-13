@@ -1,0 +1,10 @@
+<div class="card-wrapper">
+  <div class="image-part">
+    <div class="image" [ngStyle]="{'background-image': 'url(' + setDriverImage(driverData?.givenName) + ')'}"></div>
+  </div>
+  <div class="details-part">
+    <div class="title">{{driverData?.givenName + ' ' + driverData?.familyName}}</div>
+    <div class="secondery-title">{{constructorsData?.name}}</div>
+    <div class="details">{{data?.season}}, Wins : {{wins}}, Points : {{points}}</div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+@import '../../../styles.scss';
+
+:host {
+  width: 100%;
+}
+
+.table-wrapper {
+  width: 100%;
+  color: $cs-01;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  border-collapse: collapse;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+tr.active {
+ color: $cs-03;
+}
+
+td,
+th {
+  padding: 16px 8px;
+  border-collapse: collapse;
+}
+
+tr:nth-child(odd) {
+  background-color: $cs-02;;
+}
+
+tr:nth-child(even) {
+  background-color: $cs-white;
+}

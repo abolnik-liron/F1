@@ -1,0 +1,20 @@
+<div class="layout">
+  <div class="header">
+    <span class="back-button"  matTooltip="Go Back to Champions" matTooltipPosition="right" matTooltipShowDelay="200" [class.back-button--active]="state == 'races'" (click)="state = 'champions'">
+        <svg class="back-icon"  viewBox="0 0 24 24">
+            <path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M7,12L12,17V14H16V10H12V7L7,12Z" />
+        </svg>
+    </span>
+    <span class="header-text" [class.header-text--slide]="state == 'races'">{{state == 'champions' ? 'Formula 1 World Champions' : season + '  Season Races'}}</span>
+  </div>
+  <div class="container">
+    <div class="block-wrapper" [@listAnimation]="dataColletion.length" *ngIf="state == 'champions'">
+      <div class="block-item" *ngFor="let item of dataColletion" (click)="handleCardClick(item)">
+        <app-card [data]="item"></app-card>
+      </div>
+    </div>
+    <div class="table-warpper" *ngIf="state == 'races'" @fadeIn>
+      <app-race-table [activeDriver]="activeDriver" [races]="racesData"></app-race-table>
+    </div>
+  </div>
+</div>

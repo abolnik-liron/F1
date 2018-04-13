@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+@import '../../../styles.scss';
+
+.layout {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: .2px;
+  background-color: $cs-02;
+}
+
+.header {
+  width: 100%;
+  height: 64px;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  background-color: $cs-03;
+  &-text {
+    font-size: 22px;
+    color: $cs-white;
+    transform: translateX(0);
+    transition: transform .4s ease;
+    &--slide{
+      transform: translateX(64px);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 84px;
+}
+
+.block-wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.table-warpper {
+  width: 90%;
+  display: flex;
+  padding: 20px 0;
+}
+
+.block-item {
+  width: 48%;
+  background: $cs-white;
+  height: 128px;
+  margin: 16px 0px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background-color .2s ease;
+  &:hover {
+    background-color: $cs-04;
+  }
+}
+
+.back-button {
+  position: absolute;
+  top:calc(50% - 20px);
+  left:20px;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+ 
+  .back-icon {
+    width: 100%;
+    height: 100%;
+    fill: $cs-white;
+    cursor: pointer;
+    transition: opacity .2s ease;
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  &--active{
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+    transition-delay: .2s;
+    opacity: 1;
+    // display: inline;
+  }
+}
